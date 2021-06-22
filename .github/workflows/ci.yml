@@ -1,0 +1,22 @@
+name: ParFrame CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches:
+      - '*'
+  schedule:
+    # run at 6AM & 6PM UTC
+    - cron:  '0 6,18 * * *'
+
+jobs:
+  Linux:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: oss_local_scripts/make_egg.sh --debug --num_procs=2 --skip_cpp_test
+
