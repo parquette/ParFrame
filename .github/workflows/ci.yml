@@ -17,6 +17,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Build
-        run: oss_local_scripts/make_egg.sh --debug --num_procs=2 --cmake_only # --skip_cpp_test
+      #- run: oss_local_scripts/make_egg.sh --debug --num_procs=2 --skip_cpp_test
+      - run: ./configure
+      - run: make -j 4
+      - run: cd debug/oss_test
+      - run: make
+      - run: ctest
+
 
