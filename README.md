@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-ParFrames
-
 =======
 SFrame
 ======
@@ -204,4 +200,4 @@ To build an egg for your platform, run
 SDK
 ---
 See: https://github.com/dato-code/GraphLab-Create-SDK
->>>>>>> ffd23cf (refactor: names and updates)
+
